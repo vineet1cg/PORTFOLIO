@@ -126,15 +126,59 @@ export const portfolioData = {
   figmaDesigns: [
     {
       id: 1,
-      title: 'E-commerce App Design',
-      description: 'Complete UI/UX design for shopping application',
-      image: ''
+      title: 'Login/Signup Screen',
+      description: 'Clean login form with email, password fields and sign in button',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
     },
     {
       id: 2,
-      title: 'Portfolio Website Design',
-      description: 'Modern portfolio design with dark theme',
-      image: ''
+      title: 'Food App UI',
+      description: 'Food delivery app with search bar, categories, and restaurant cards',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 3,
+      title: 'Dashboard UI',
+      description: 'Analytics dashboard with charts, sidebar navigation, and user profile',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 4,
+      title: 'Weather App',
+      description: 'Weather forecast display with 7-day forecast and weather icons',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 5,
+      title: 'Quiz App UI',
+      description: 'Quiz interface with question display, timer, progress bar, and answer options',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 6,
+      title: 'Chat App UI',
+      description: 'Chat interface with messages, user avatars, and send button',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 7,
+      title: 'E-commerce App',
+      description: 'Shopping app with product grid, prices, and cart icon',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
+    },
+    {
+      id: 8,
+      title: 'Portfolio Website',
+      description: 'Modern portfolio design with bio, profile image, skills, and projects',
+      image: '',
+      figmaUrl: 'https://www.figma.com/design/vAJIyBABHtLa4o8F0UHAkA/Practicals?node-id=0-1&t=JrFGc2GVxxDVfLmy-1'
     }
   ],
   resume: {
