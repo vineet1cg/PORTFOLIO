@@ -6,7 +6,7 @@ export const portfolioData = {
   location: 'India',
   social: {
     github: 'https://github.com/vineet1cg',
-    leetcode: 'https://leetcode.com/vineet1cg',
+    leetcode: 'https://leetcode.com/u/I5RwayIS7D/',
     linkedin: 'https://linkedin.com/in/vineet1cg',
     twitter: 'https://twitter.com/vineet1cg',
     youtube: 'https://youtube.com/@vineet1cg',
