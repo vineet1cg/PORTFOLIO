@@ -75,9 +75,45 @@ export const portfolioData = {
       image: ''
     }
   ],
-  certificates: [],
-  hackathons: [],
-  achievements: [],
+  certificates: [
+    {
+      id: 1,
+      title: 'Full Stack Development Certification',
+      issuer: 'Online Platform',
+      date: '2024',
+      description: 'Comprehensive MERN stack development course'
+    },
+    {
+      id: 2,
+      title: 'JavaScript Fundamentals',
+      issuer: 'Online Platform',
+      date: '2023',
+      description: 'JavaScript core concepts and best practices'
+    }
+  ],
+  hackathons: [
+    {
+      id: 1,
+      name: 'Innovation Hackathon 2024',
+      role: 'Participant',
+      description: 'Built a real-time collaboration tool',
+      date: '2024'
+    }
+  ],
+  achievements: [
+    {
+      id: 1,
+      title: 'Code Streak Achiever',
+      description: 'Maintained 100+ days coding streak on LeetCode',
+      date: '2024'
+    },
+    {
+      id: 2,
+      title: 'Open Source Contributor',
+      description: 'Contributed to multiple open source projects',
+      date: '2023'
+    }
+  ],
   hackathonParticipation: [
     {
       id: 1,
@@ -87,7 +123,20 @@ export const portfolioData = {
       technologies: ['Node.js', 'Express', 'MongoDB']
     }
   ],
-  figmaDesigns: [],
+  figmaDesigns: [
+    {
+      id: 1,
+      title: 'E-commerce App Design',
+      description: 'Complete UI/UX design for shopping application',
+      image: ''
+    },
+    {
+      id: 2,
+      title: 'Portfolio Website Design',
+      description: 'Modern portfolio design with dark theme',
+      image: ''
+    }
+  ],
   resume: {
     experience: [
       {
