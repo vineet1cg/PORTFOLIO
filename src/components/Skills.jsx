@@ -1,47 +1,50 @@
 import { motion } from 'framer-motion'
-import { FaHtml5, FaCss3Alt, FaNetworkWired } from 'react-icons/fa'
+import { FaHtml5, FaNetworkWired } from 'react-icons/fa'
 import { 
   SiJavascript, SiReact, SiTailwindcss, 
-  SiNodedotjs, SiExpress, SiMongodb, 
-  SiDocker, SiGit, SiFigma, SiLinux
+  SiNodedotjs, SiExpress, SiMongodb, SiPostgresql,
+  SiDocker, SiGit, SiFigma, SiLinux, SiBlender, SiUnity
 } from 'react-icons/si'
 import styles from './Skills.module.css'
-import { portfolioData } from '../data/portfolioData'
-
-const skillIcons = {
-  'HTML': FaHtml5,
-  'CSS': FaCss3Alt,
-  'JavaScript': SiJavascript,
-  'React': SiReact,
-  'Tailwind': SiTailwindcss,
-  'Node.js': SiNodedotjs,
-  'Express': SiExpress,
-  'MongoDB': SiMongodb,
-  'Docker': SiDocker,
-  'Git': SiGit,
-  'Figma': SiFigma,
-  'Linux': SiLinux
-}
 
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: portfolioData.skills.frontend,
+    skills: [
+      { name: 'React', icon: SiReact },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'HTML/CSS', icon: FaHtml5 },
+      { name: 'Tailwind', icon: SiTailwindcss },
+    ],
     color: '#61DAFB'
   },
   {
-    title: 'Backend',
-    skills: portfolioData.skills.backend,
+    title: 'Backend Architecture',
+    skills: [
+      { name: 'Node.js', icon: SiNodedotjs },
+      { name: 'Express', icon: SiExpress },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+      { name: 'REST APIs', icon: FaNetworkWired },
+    ],
     color: '#68A063'
   },
   {
     title: 'Tools',
-    skills: [...portfolioData.skills.devops, ...portfolioData.skills.tools],
+    skills: [
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Linux', icon: SiLinux },
+      { name: 'Git', icon: SiGit },
+    ],
     color: '#FF6B6B'
   },
   {
-    title: 'Languages',
-    skills: portfolioData.skills.languages,
+    title: 'Design',
+    skills: [
+      { name: 'Figma', icon: SiFigma },
+      { name: 'Unity', icon: SiUnity },
+      { name: 'Blender', icon: SiBlender },
+    ],
     color: '#F7DF1E'
   }
 ]
@@ -75,25 +78,22 @@ function Skills() {
                 <h3 className={styles.categoryTitle}>{category.title}</h3>
               </div>
               <div className={styles.skillList}>
-                {category.skills.map((skill, skillIndex) => {
-                  const Icon = skillIcons[skill] || SiJavascript
-                  return (
-                    <motion.div
-                      key={skill}
-                      className={styles.skillItem}
-                      initial={{ opacity: 0, x: -10 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className={styles.skillIcon} style={{ color: category.color }}>
-                        <Icon />
-                      </span>
-                      <span className={styles.skillName}>{skill}</span>
-                    </motion.div>
-                  )
-                })}
+                {category.skills.map((skill, skillIndex) => (
+                  <motion.div
+                    key={skill.name}
+                    className={styles.skillItem}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.3, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
+                    whileHover={{ x: 5 }}
+                  >
+                    <span className={styles.skillIcon} style={{ color: category.color }}>
+                      <skill.icon />
+                    </span>
+                    <span className={styles.skillName}>{skill.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </motion.div>
           ))}
