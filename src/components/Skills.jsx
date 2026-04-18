@@ -10,7 +10,6 @@ import {
 import styles from './Skills.module.css'
 import { portfolioData } from '../data/portfolioData'
 
-// Icon mapping for skills
 const skillIcons = {
   'HTML': FaHtml5,
   'CSS': FaCss3Alt,
@@ -37,42 +36,30 @@ const skillIcons = {
   'Rust': SiRust
 }
 
-// Convert skills data to categories format
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: portfolioData.skills.frontend.map(skill => ({
-      name: skill,
-      icon: skillIcons[skill] || SiJavascript
-    }))
+    skills: portfolioData.skills.frontend
   },
   {
     title: 'Backend',
-    skills: portfolioData.skills.backend.map(skill => ({
-      name: skill,
-      icon: skillIcons[skill] || SiNodedotjs
-    }))
+    skills: portfolioData.skills.backend
   },
   {
     title: 'Databases',
-    skills: portfolioData.skills.databases.map(skill => ({
-      name: skill,
-      icon: skillIcons[skill] || SiMongodb
-    }))
+    skills: portfolioData.skills.databases
   },
   {
-    title: 'DevOps & Tools',
-    skills: portfolioData.skills.devops.concat(portfolioData.skills.tools).map(skill => ({
-      name: skill,
-      icon: skillIcons[skill] || SiGit
-    }))
+    title: 'DevOps',
+    skills: portfolioData.skills.devops
   },
   {
-    title: 'Languages & Other',
-    skills: portfolioData.skills.languages.map(skill => ({
-      name: skill,
-      icon: skillIcons[skill] || SiJavascript
-    }))
+    title: 'Tools',
+    skills: portfolioData.skills.tools
+  },
+  {
+    title: 'Languages',
+    skills: portfolioData.skills.languages
   }
 ]
 
@@ -91,7 +78,7 @@ function Skills() {
           <p className={styles.subtitle}>Technologies I work with</p>
         </motion.div>
 
-        <div className={styles.grid}>
+        <div className={styles.categories}>
           {skillCategories.map((category, catIndex) => (
             <motion.div
               key={category.title}
@@ -99,26 +86,28 @@ function Skills() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: catIndex * 0.1 }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
             >
               <h3 className={styles.categoryTitle}>{category.title}</h3>
-              <div className={styles.skillList}>
-                {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skill.name}
-                    className={styles.skillItem}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.4, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
-                    whileHover={{ y: -5, color: 'var(--accent-coral)' }}
-                  >
-                    <div className={styles.skillIcon}>
-                      <skill.icon />
-                    </div>
-                    <span className={styles.skillName}>{skill.name}</span>
-                  </motion.div>
-                ))}
+              <div className={styles.skillTags}>
+                {category.skills.map((skill, skillIndex) => {
+                  const Icon = skillIcons[skill] || SiGithub
+                  return (
+                    <motion.div
+                      key={skill}
+                      className={styles.skillTag}
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      whileInView={{ opacity: 1, scale: 1 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
+                      whileHover={{ scale: 1.05 }}
+                      whileTap={{ scale: 0.95 }}
+                    >
+                      <span className={styles.skillIcon}><Icon /></span>
+                      <span>{skill}</span>
+                    </motion.div>
+                  )
+                })}
               </div>
             </motion.div>
           ))}
