@@ -75,12 +75,11 @@ function Resume() {
                   <FaTimes />
                 </button>
                 <div className={styles.pdfViewer}>
-                  <FaFileAlt size={80} />
-                  <h3>Resume Preview</h3>
-                  <p>PDF viewer would display here</p>
-                  <p className={styles.hint}>
-                    Replace with actual PDF embed or use a PDF viewer library
-                  </p>
+                  <iframe 
+                    src="/resume.pdf" 
+                    className={styles.pdfFrame}
+                    title="Resume PDF"
+                  />
                 </div>
               </motion.div>
             </motion.div>
