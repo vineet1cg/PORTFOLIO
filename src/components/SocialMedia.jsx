@@ -15,6 +15,10 @@ const socialLinks = [
 function SocialMedia() {
   return (
     <section className={styles.section}>
+      <div className={styles.background}>
+        <div className={styles.gradientOrb1}></div>
+        <div className={styles.gradientOrb2}></div>
+      </div>
       <div className={styles.container}>
         <motion.div
           className={styles.header}
