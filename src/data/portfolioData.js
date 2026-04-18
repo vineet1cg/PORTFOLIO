@@ -9,7 +9,7 @@ export const portfolioData = {
     leetcode: 'https://leetcode.com/u/I5RwayIS7D/',
     linkedin: 'https://www.linkedin.com/in/vineet-prajapati-680a0b394/',
     twitter: 'https://twitter.com/vineet1cg',
-    youtube: 'https://youtube.com/@vineet1cg',
+    youtube: 'https://www.youtube.com/@VineetPrajapati-m9g',
   },
   skills: {
     frontend: ['React', 'JavaScript', 'HTML/CSS', 'Tailwind'],
