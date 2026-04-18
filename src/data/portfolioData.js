@@ -7,7 +7,7 @@ export const portfolioData = {
   social: {
     github: 'https://github.com/vineet1cg',
     leetcode: 'https://leetcode.com/u/I5RwayIS7D/',
-    linkedin: 'https://linkedin.com/in/vineet1cg',
+    linkedin: 'https://www.linkedin.com/in/vineet-prajapati-680a0b394/',
     twitter: 'https://twitter.com/vineet1cg',
     youtube: 'https://youtube.com/@vineet1cg',
   },
