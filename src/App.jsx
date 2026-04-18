@@ -18,6 +18,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <SocialMedia />
         <Skills id="skills" />
         <Projects id="projects" />
         <FigmaDesigns />
@@ -26,7 +27,6 @@ function App() {
         <Achievements />
         <Resume />
         <Contact id="contact" />
-        <SocialMedia />
       </main>
       <Footer />
     </div>
