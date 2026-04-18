@@ -5,23 +5,29 @@ import styles from './Projects.module.css'
 import { portfolioData } from '../data/portfolioData'
 
 const categories = [
-  { id: 'games', label: 'Games', icon: FaGamepad },
-  { id: 'clones', label: 'Clones', icon: FaClone },
   { id: 'fullstack', label: 'Full Stack', icon: FaCube },
   { id: 'frontend', label: 'Frontend', icon: FaCode },
+  { id: 'backend', label: 'Backend', icon: FaCube },
+  { id: 'clones', label: 'Clones', icon: FaClone },
 ]
 
-// Convert portfolio projects to the format expected by this component
-const projects = portfolioData.projects.map(project => ({
-  id: project.id,
-  title: project.title,
-  description: project.description,
-  technologies: project.technologies,
-  category: 'fullstack', // Default category for now
-  github: project.githubUrl,
-  live: project.demoUrl,
-  youtube: null,
-}))
+const projects = portfolioData.projects.map(project => {
+  let category = 'fullstack'
+  if (project.title.includes('Banking Backend')) category = 'backend'
+  else if (project.title.includes('Learn JS')) category = 'frontend'
+  else if (project.title.includes('AI Recipe')) category = 'frontend'
+  
+  return {
+    id: project.id,
+    title: project.title,
+    description: project.description,
+    technologies: project.technologies,
+    category,
+    github: project.githubUrl,
+    live: project.demoUrl,
+    youtube: null,
+  }
+})
 
 function Projects() {
   const [activeCategory, setActiveCategory] = useState('all')
