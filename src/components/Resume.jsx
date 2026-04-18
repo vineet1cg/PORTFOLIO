@@ -42,10 +42,16 @@ function Resume() {
               <FaFileAlt />
               View Resume
             </button>
-            <p className={styles.notice}>
-              <FaDownload style={{ marginRight: '8px' }} />
-              Auto-download is strictly prohibited
-            </p>
+            <a 
+              href="/resume.pdf" 
+              className={styles.downloadBtn}
+              target="_blank" 
+              rel="noopener noreferrer"
+              download
+            >
+              <FaDownload />
+              Download Resume
+            </a>
           </div>
         </motion.div>
 
