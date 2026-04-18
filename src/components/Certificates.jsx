@@ -1,13 +1,17 @@
 import { motion } from 'framer-motion'
 import { FaCertificate, FaExternalLinkAlt } from 'react-icons/fa'
 import styles from './Certificates.module.css'
+import { portfolioData } from '../data/portfolioData'
 
-const certificates = [
-  { id: 1, title: 'Certificate Name 1', organization: 'Issuing Organization', date: '2024', proof: '#', description: 'Brief description of what was learned' },
-  { id: 2, title: 'Certificate Name 2', organization: 'Issuing Organization', date: '2024', proof: '#', description: 'Brief description of what was learned' },
-  { id: 3, title: 'Certificate Name 3', organization: 'Issuing Organization', date: '2023', proof: '#', description: 'Brief description of what was learned' },
-  { id: 4, title: 'Certificate Name 4', organization: 'Issuing Organization', date: '2023', proof: '#', description: 'Brief description of what was learned' },
-]
+// Convert certificates data to the format expected by this component
+const certificates = portfolioData.certificates.map(cert => ({
+  id: cert.id,
+  title: cert.title,
+  organization: cert.organization,
+  date: cert.date,
+  proof: cert.proof,
+  description: cert.description
+}))
 
 function Certificates() {
   return (

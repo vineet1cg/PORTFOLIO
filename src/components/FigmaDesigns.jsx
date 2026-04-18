@@ -2,13 +2,16 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFigma, FaExternalLinkAlt, FaTimes } from 'react-icons/fa'
 import styles from './FigmaDesigns.module.css'
+import { portfolioData } from '../data/portfolioData'
 
-const designs = [
-  { id: 1, title: 'Design Project 1', description: 'UI/UX design for a mobile app', image: '/images/figma1.jpg', figma: 'https://figma.com/file/example1' },
-  { id: 2, title: 'Design Project 2', description: 'Dashboard design for SaaS platform', image: '/images/figma2.jpg', figma: 'https://figma.com/file/example2' },
-  { id: 3, title: 'Design Project 3', description: 'E-commerce checkout flow', image: '/images/figma3.jpg', figma: 'https://figma.com/file/example3' },
-  { id: 4, title: 'Design Project 4', description: 'Portfolio template design', image: '/images/figma4.jpg', figma: 'https://figma.com/file/example4' },
-]
+// Convert figma designs data to the format expected by this component
+const designs = portfolioData.figmaDesigns.map(design => ({
+  id: design.id,
+  title: design.title,
+  description: design.description,
+  image: design.image,
+  figma: design.figmaUrl
+}))
 
 function FigmaDesigns() {
   const [selectedDesign, setSelectedDesign] = useState(null)

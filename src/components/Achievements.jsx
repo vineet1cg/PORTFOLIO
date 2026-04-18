@@ -1,13 +1,23 @@
 import { motion } from 'framer-motion'
 import { FaTrophy, FaMedal, FaStar } from 'react-icons/fa'
 import styles from './Achievements.module.css'
+import { portfolioData } from '../data/portfolioData'
 
-const achievements = [
-  { id: 1, title: 'Achievement Title 1', description: 'Description of the achievement and recognition', icon: FaTrophy, type: 'award' },
-  { id: 2, title: 'Achievement Title 2', description: 'Description of the achievement and recognition', icon: FaMedal, type: 'medal' },
-  { id: 3, title: 'Achievement Title 3', description: 'Description of the achievement and recognition', icon: FaStar, type: 'star' },
-  { id: 4, title: 'Achievement Title 4', description: 'Description of the achievement and recognition', icon: FaTrophy, type: 'award' },
-]
+// Map achievement types to icons
+const achievementIcons = {
+  award: FaTrophy,
+  medal: FaMedal,
+  star: FaStar
+}
+
+// Convert achievements data to the format expected by this component
+const achievements = portfolioData.achievements.map(achievement => ({
+  id: achievement.id,
+  title: achievement.title,
+  description: achievement.description,
+  icon: achievementIcons.award, // Default icon for now
+  type: 'award'
+}))
 
 function Achievements() {
   return (

@@ -1,7 +1,10 @@
 import { motion } from 'framer-motion'
 import styles from './Hero.module.css'
+import { portfolioData } from '../data/portfolioData'
 
 function Hero() {
+  const { name, title, tagline } = portfolioData
+  
   return (
     <section id="hero" className={styles.hero}>
       <div className={styles.background}>
@@ -17,36 +20,35 @@ function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: 'easeOut' }}
         >
-          <motion.span 
-            className={styles.greeting}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-          >
-            Hello, I'm
-          </motion.span>
-          
+           <motion.span 
+             className={styles.greeting}
+             initial={{ opacity: 0 }}
+             animate={{ opacity: 1 }}
+             transition={{ delay: 0.2 }}
+           >
+             Hello, I'm
+           </motion.span>
+           
           <h1 className={styles.name}>
-            <span className={styles.nameText}>Your Name</span>
+            <span className={styles.nameText}>{name}</span>
           </h1>
-          
+           
           <motion.p 
             className={styles.tagline}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4 }}
           >
-            Full-Stack Developer & UI Enthusiast
+            {title}
           </motion.p>
-          
+           
           <motion.p 
             className={styles.description}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.6 }}
           >
-            I build stunning web experiences with modern technologies. 
-            Passionate about clean code, seamless UX, and turning ideas into reality.
+            {tagline}
           </motion.p>
           
           <motion.div 
@@ -72,8 +74,8 @@ function Hero() {
         >
           <div className={styles.imageWrapper}>
             <img 
-              src="/images/profile.jpg" 
-              alt="Your Name" 
+              src="/images/image.jpg" 
+              alt={portfolioData.name} 
               className={styles.profileImage}
               onError={(e) => {
                 e.target.style.display = 'none'

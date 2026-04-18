@@ -5,52 +5,74 @@ import {
   SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, 
   SiSupabase, SiRust, SiGit, SiGithub, 
   SiPostman, SiDocker, SiVercel, SiNetlify, 
-  SiLinux, SiFigma, SiBlender 
+  SiLinux, SiFigma, SiBlender, SiFirebase 
 } from 'react-icons/si'
 import styles from './Skills.module.css'
+import { portfolioData } from '../data/portfolioData'
 
+// Icon mapping for skills
+const skillIcons = {
+  'HTML': FaHtml5,
+  'CSS': FaCss3Alt,
+  'JavaScript': SiJavascript,
+  'React': SiReact,
+  'Tailwind': SiTailwindcss,
+  'Redux': SiRedux,
+  'Node.js': SiNodedotjs,
+  'Express': SiExpress,
+  'REST APIs': FaNetworkWired,
+  'MongoDB': SiMongodb,
+  'PostgreSQL': SiPostgresql,
+  'Firebase': SiFirebase,
+  'Git': SiGit,
+  'Docker': SiDocker,
+  'Postman': SiPostman,
+  'Figma': SiFigma,
+  'Linux': SiLinux,
+  'Blender': SiBlender,
+  'Unity': SiBlender,
+  'Java': SiJavascript,
+  'C': SiJavascript,
+  'C++': SiJavascript,
+  'Rust': SiRust
+}
+
+// Convert skills data to categories format
 const skillCategories = [
   {
     title: 'Frontend',
-    skills: [
-      { name: 'HTML', icon: FaHtml5 },
-      { name: 'CSS', icon: FaCss3Alt },
-      { name: 'JavaScript', icon: SiJavascript },
-      { name: 'React', icon: SiReact },
-      { name: 'Tailwind CSS', icon: SiTailwindcss },
-      { name: 'Redux Toolkit', icon: SiRedux },
-    ]
+    skills: portfolioData.skills.frontend.map(skill => ({
+      name: skill,
+      icon: skillIcons[skill] || SiJavascript
+    }))
   },
   {
-    title: 'Backend & DB',
-    skills: [
-      { name: 'Node.js', icon: SiNodedotjs },
-      { name: 'Express', icon: SiExpress },
-      { name: 'REST API', icon: FaNetworkWired },
-      { name: 'MongoDB', icon: SiMongodb },
-      { name: 'PostgreSQL', icon: SiPostgresql },
-      { name: 'Supabase', icon: SiSupabase },
-      { name: 'Rust', icon: SiRust },
-    ]
+    title: 'Backend',
+    skills: portfolioData.skills.backend.map(skill => ({
+      name: skill,
+      icon: skillIcons[skill] || SiNodedotjs
+    }))
   },
   {
-    title: 'Tools & DevOps',
-    skills: [
-      { name: 'Git', icon: SiGit },
-      { name: 'GitHub', icon: SiGithub },
-      { name: 'Postman', icon: SiPostman },
-      { name: 'Docker', icon: SiDocker },
-      { name: 'Vercel', icon: SiVercel },
-      { name: 'Netlify', icon: SiNetlify },
-    ]
+    title: 'Databases',
+    skills: portfolioData.skills.databases.map(skill => ({
+      name: skill,
+      icon: skillIcons[skill] || SiMongodb
+    }))
   },
   {
-    title: 'Design & OS',
-    skills: [
-      { name: 'Linux', icon: SiLinux },
-      { name: 'Figma', icon: SiFigma },
-      { name: 'Blender', icon: SiBlender },
-    ]
+    title: 'DevOps & Tools',
+    skills: portfolioData.skills.devops.concat(portfolioData.skills.tools).map(skill => ({
+      name: skill,
+      icon: skillIcons[skill] || SiGit
+    }))
+  },
+  {
+    title: 'Languages & Other',
+    skills: portfolioData.skills.languages.map(skill => ({
+      name: skill,
+      icon: skillIcons[skill] || SiJavascript
+    }))
   }
 ]
 

@@ -2,9 +2,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { FaFileAlt, FaDownload, FaTimes } from 'react-icons/fa'
 import styles from './Resume.module.css'
+import { portfolioData } from '../data/portfolioData'
 
 function Resume() {
   const [showModal, setShowModal] = useState(false)
+  const { name, title, email, location, resume } = portfolioData
 
   return (
     <section id="resume" className={styles.section}>
@@ -27,12 +29,12 @@ function Resume() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <div className={styles.preview}>
+           <div className={styles.preview}>
             <FaFileAlt size={60} />
-            <h3>Your Name</h3>
-            <p>Full-Stack Developer</p>
-            <p>Email: your.email@example.com</p>
-            <p>Location: City, Country</p>
+            <h3>{name}</h3>
+            <p>{title}</p>
+            <p>Email: {email}</p>
+            <p>Location: {location}</p>
           </div>
 
           <div className={styles.actions}>

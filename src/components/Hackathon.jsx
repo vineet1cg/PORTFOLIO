@@ -1,12 +1,18 @@
 import { motion } from 'framer-motion'
 import { FaHackerrank, FaGithub, FaYoutube } from 'react-icons/fa'
 import styles from './Hackathon.module.css'
+import { portfolioData } from '../data/portfolioData'
 
-const hackathons = [
-  { id: 1, name: 'Hackathon Name 1', problem: 'Problem statement describing the challenge', solution: 'Solution approach and implementation', outcome: 'Winner/Runner-up/Participant', github: '#', youtube: '#' },
-  { id: 2, name: 'Hackathon Name 2', problem: 'Problem statement describing the challenge', solution: 'Solution approach and implementation', outcome: 'Participant', github: '#', youtube: '#' },
-  { id: 3, name: 'Hackathon Name 3', problem: 'Problem statement describing the challenge', solution: 'Solution approach and implementation', outcome: 'Top 10', github: '#', youtube: null },
-]
+// Convert hackathon participation data to the format expected by this component
+const hackathons = portfolioData.hackathonParticipation.map(hack => ({
+  id: hack.id,
+  name: hack.title,
+  problem: 'Backend architecture and system design challenges',
+  solution: hack.description,
+  outcome: 'Participant',
+  github: '#',
+  youtube: null
+}))
 
 function Hackathon() {
   return (

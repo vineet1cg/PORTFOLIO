@@ -22,10 +22,55 @@ export const portfolioData = {
   projects: [
     {
       id: 1,
-      title: 'Banking Backend System',
-      description: 'A backend-focused banking system designed to simulate real-world financial operations with RESTful API architecture, secure authentication, transaction management, and scalable design principles.',
+      title: 'Whisper Wall',
+      description: 'A MERN stack private gallery application that uses ImageKit API for image sharing. Users can share pictures with limited access to invited users only. Features secure authentication and private sharing.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'ImageKit'],
+      githubUrl: 'https://github.com/vineet1cg/MERN-Project',
+      demoUrl: '',
+      image: ''
+    },
+    {
+      id: 2,
+      title: 'Music App Clone',
+      description: 'Fully working backend and frontend of an mp3 sharing platform with role-based authentication. Complete music streaming solution.',
+      technologies: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+      githubUrl: 'https://github.com/vineet1cg/SPOTIFY-CLONE',
+      demoUrl: '',
+      image: ''
+    },
+    {
+      id: 3,
+      title: 'AI Recipe Generator',
+      description: 'A frontend + AI based project that uses local LLM to generate recipes. Interactive recipe creation powered by artificial intelligence.',
+      technologies: ['React', 'Local LLM', 'AI/ML'],
+      githubUrl: 'https://github.com/vineet1cg/Ai-Recipe-Genrator',
+      demoUrl: '',
+      image: ''
+    },
+    {
+      id: 4,
+      title: 'Banking Backend',
+      description: 'A backend project focused on learning Node.js backend development. Features RESTful API, authentication, and transaction management.',
       technologies: ['Node.js', 'Express', 'MongoDB', 'REST APIs'],
       githubUrl: 'https://github.com/vineet1cg/Banking-Backend',
+      demoUrl: '',
+      image: ''
+    },
+    {
+      id: 5,
+      title: 'Learn JS',
+      description: 'A well-maintained repo documenting my JavaScript learning journey. Contains notes, examples, and projects from my JS learning path.',
+      technologies: ['JavaScript', 'HTML', 'CSS'],
+      githubUrl: 'https://github.com/vineet1cg/learn-js',
+      demoUrl: '',
+      image: ''
+    },
+    {
+      id: 6,
+      title: 'This Portfolio',
+      description: 'My personal portfolio website showcasing skills, projects, and professional journey. Built with React and modern UI.',
+      technologies: ['React', 'Vite', 'CSS Modules', 'Framer Motion'],
+      githubUrl: 'https://github.com/vineet1cg/PORTFOLIO',
       demoUrl: '',
       image: ''
     }

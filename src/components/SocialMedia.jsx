@@ -2,13 +2,14 @@ import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaTwitter, FaYoutube } from 'react-icons/fa'
 import { SiLeetcode } from 'react-icons/si'
 import styles from './SocialMedia.module.css'
+import { portfolioData } from '../data/portfolioData'
 
 const socialLinks = [
-  { name: 'LeetCode', url: 'https://leetcode.com/username', icon: SiLeetcode },
-  { name: 'GitHub', url: 'https://github.com/username', icon: FaGithub },
-  { name: 'LinkedIn', url: 'https://linkedin.com/in/username', icon: FaLinkedin },
-  { name: 'Twitter', url: 'https://twitter.com/username', icon: FaTwitter },
-  { name: 'YouTube', url: 'https://youtube.com/@username', icon: FaYoutube },
+  { name: 'LeetCode', url: portfolioData.social.leetcode, icon: SiLeetcode },
+  { name: 'GitHub', url: portfolioData.social.github, icon: FaGithub },
+  { name: 'LinkedIn', url: portfolioData.social.linkedin, icon: FaLinkedin },
+  { name: 'Twitter', url: portfolioData.social.twitter, icon: FaTwitter },
+  { name: 'YouTube', url: portfolioData.social.youtube, icon: FaYoutube },
 ]
 
 function SocialMedia() {
