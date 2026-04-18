@@ -32,20 +32,7 @@ export const portfolioData = {
   ],
   certificates: [],
   hackathons: [],
-  achievements: [
-    {
-      id: 1,
-      title: 'GitHub Contribution Streak',
-      description: 'Maintained consistent coding activity and contributions on GitHub',
-      date: 'Ongoing'
-    },
-    {
-      id: 2,
-      title: 'Open Source Contributor',
-      description: 'Actively contributing to open source projects and repositories',
-      date: '2023-Present'
-    }
-  ],
+  achievements: [],
   hackathonParticipation: [
     {
       id: 1,
