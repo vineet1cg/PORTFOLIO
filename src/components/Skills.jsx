@@ -23,13 +23,27 @@ const skillIcons = {
   'Linux': SiLinux
 }
 
-const allSkills = [
-  ...portfolioData.skills.frontend,
-  ...portfolioData.skills.backend,
-  ...portfolioData.skills.databases,
-  ...portfolioData.skills.devops,
-  ...portfolioData.skills.tools,
-  ...portfolioData.skills.languages
+const skillCategories = [
+  {
+    title: 'Frontend',
+    skills: portfolioData.skills.frontend,
+    color: '#61DAFB'
+  },
+  {
+    title: 'Backend',
+    skills: portfolioData.skills.backend,
+    color: '#68A063'
+  },
+  {
+    title: 'Tools',
+    skills: [...portfolioData.skills.devops, ...portfolioData.skills.tools],
+    color: '#FF6B6B'
+  },
+  {
+    title: 'Languages',
+    skills: portfolioData.skills.languages,
+    color: '#F7DF1E'
+  }
 ]
 
 function Skills() {
@@ -47,24 +61,42 @@ function Skills() {
           <p className={styles.subtitle}>Technologies I work with</p>
         </motion.div>
 
-        <div className={styles.skillGrid}>
-          {allSkills.map((skill, index) => {
-            const Icon = skillIcons[skill] || SiJavascript
-            return (
-              <motion.div
-                key={skill}
-                className={styles.skillItem}
-                initial={{ opacity: 0, y: 10 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.03 }}
-                whileHover={{ y: -5 }}
-              >
-                <span className={styles.skillIcon}><Icon /></span>
-                <span>{skill}</span>
-              </motion.div>
-            )
-          })}
+        <div className={styles.categoriesGrid}>
+          {skillCategories.map((category, catIndex) => (
+            <motion.div
+              key={category.title}
+              className={styles.categoryCard}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+            >
+              <div className={styles.categoryHeader} style={{ borderColor: category.color }}>
+                <h3 className={styles.categoryTitle}>{category.title}</h3>
+              </div>
+              <div className={styles.skillList}>
+                {category.skills.map((skill, skillIndex) => {
+                  const Icon = skillIcons[skill] || SiJavascript
+                  return (
+                    <motion.div
+                      key={skill}
+                      className={styles.skillItem}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      viewport={{ once: true }}
+                      transition={{ duration: 0.3, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
+                      whileHover={{ x: 5 }}
+                    >
+                      <span className={styles.skillIcon} style={{ color: category.color }}>
+                        <Icon />
+                      </span>
+                      <span className={styles.skillName}>{skill}</span>
+                    </motion.div>
+                  )
+                })}
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>
