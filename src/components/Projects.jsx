@@ -60,18 +60,22 @@ function Projects() {
           <button
             className={`${styles.categoryBtn} ${activeCategory === 'all' ? styles.active : ''}`}
             onClick={() => setActiveCategory('all')}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
           >
             All
           </button>
           {categories.map((cat) => (
-            <button
+            <motion.button
               key={cat.id}
               className={`${styles.categoryBtn} ${activeCategory === cat.id ? styles.active : ''}`}
               onClick={() => setActiveCategory(cat.id)}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
             >
               <cat.icon />
               <span>{cat.label}</span>
-            </button>
+            </motion.button>
           ))}
         </motion.div>
 

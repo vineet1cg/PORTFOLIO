@@ -73,6 +73,7 @@ function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: catIndex * 0.1 }}
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
             >
               <div className={styles.categoryHeader} style={{ borderColor: category.color }}>
                 <h3 className={styles.categoryTitle}>{category.title}</h3>

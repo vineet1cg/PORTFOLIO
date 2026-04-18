@@ -57,12 +57,22 @@ function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.8 }}
           >
-            <a href="#projects" className={styles.btnPrimary}>
+            <motion.a 
+              href="#projects" 
+              className={styles.btnPrimary}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               View My Work
-            </a>
-            <a href="#contact" className={styles.btnSecondary}>
+            </motion.a>
+            <motion.a 
+              href="#contact" 
+              className={styles.btnSecondary}
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+            >
               Get In Touch
-            </a>
+            </motion.a>
           </motion.div>
         </motion.div>
         
@@ -72,7 +82,11 @@ function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.5, duration: 0.8 }}
         >
-          <div className={styles.imageWrapper}>
+          <motion.div 
+            className={styles.imageWrapper}
+            animate={{ y: [0, -10, 0] }}
+            transition={{ repeat: Infinity, duration: 3, ease: "easeInOut" }}
+          >
             <img 
               src="/images/image.jpg" 
               alt={portfolioData.name} 
@@ -83,7 +97,7 @@ function Hero() {
               }}
             />
             <div className={styles.imageRing}></div>
-          </div>
+          </motion.div>
         </motion.div>
       </div>
       
