@@ -1,11 +1,9 @@
 import { motion } from 'framer-motion'
 import { FaHtml5, FaCss3Alt, FaNetworkWired } from 'react-icons/fa'
 import { 
-  SiJavascript, SiReact, SiTailwindcss, SiRedux, 
-  SiNodedotjs, SiExpress, SiMongodb, SiPostgresql, 
-  SiSupabase, SiRust, SiGit, SiGithub, 
-  SiPostman, SiDocker, SiVercel, SiNetlify, 
-  SiLinux, SiFigma, SiBlender, SiFirebase 
+  SiJavascript, SiReact, SiTailwindcss, 
+  SiNodedotjs, SiExpress, SiMongodb, 
+  SiDocker, SiGit, SiFigma, SiLinux
 } from 'react-icons/si'
 import styles from './Skills.module.css'
 import { portfolioData } from '../data/portfolioData'
@@ -16,51 +14,22 @@ const skillIcons = {
   'JavaScript': SiJavascript,
   'React': SiReact,
   'Tailwind': SiTailwindcss,
-  'Redux': SiRedux,
   'Node.js': SiNodedotjs,
   'Express': SiExpress,
-  'REST APIs': FaNetworkWired,
   'MongoDB': SiMongodb,
-  'PostgreSQL': SiPostgresql,
-  'Firebase': SiFirebase,
-  'Git': SiGit,
   'Docker': SiDocker,
-  'Postman': SiPostman,
+  'Git': SiGit,
   'Figma': SiFigma,
-  'Linux': SiLinux,
-  'Blender': SiBlender,
-  'Unity': SiBlender,
-  'Java': SiJavascript,
-  'C': SiJavascript,
-  'C++': SiJavascript,
-  'Rust': SiRust
+  'Linux': SiLinux
 }
 
-const skillCategories = [
-  {
-    title: 'Frontend',
-    skills: portfolioData.skills.frontend
-  },
-  {
-    title: 'Backend',
-    skills: portfolioData.skills.backend
-  },
-  {
-    title: 'Databases',
-    skills: portfolioData.skills.databases
-  },
-  {
-    title: 'DevOps',
-    skills: portfolioData.skills.devops
-  },
-  {
-    title: 'Tools',
-    skills: portfolioData.skills.tools
-  },
-  {
-    title: 'Languages',
-    skills: portfolioData.skills.languages
-  }
+const allSkills = [
+  ...portfolioData.skills.frontend,
+  ...portfolioData.skills.backend,
+  ...portfolioData.skills.databases,
+  ...portfolioData.skills.devops,
+  ...portfolioData.skills.tools,
+  ...portfolioData.skills.languages
 ]
 
 function Skills() {
@@ -78,39 +47,24 @@ function Skills() {
           <p className={styles.subtitle}>Technologies I work with</p>
         </motion.div>
 
-        <div className={styles.categories}>
-          {skillCategories.map((category, catIndex) => (
-            <motion.div
-              key={category.title}
-              className={styles.category}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: catIndex * 0.1 }}
-            >
-              <h3 className={styles.categoryTitle}>{category.title}</h3>
-              <div className={styles.skillTags}>
-                {category.skills.map((skill, skillIndex) => {
-                  const Icon = skillIcons[skill] || SiGithub
-                  return (
-                    <motion.div
-                      key={skill}
-                      className={styles.skillTag}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      whileInView={{ opacity: 1, scale: 1 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.3, delay: (catIndex * 0.1) + (skillIndex * 0.05) }}
-                      whileHover={{ scale: 1.05 }}
-                      whileTap={{ scale: 0.95 }}
-                    >
-                      <span className={styles.skillIcon}><Icon /></span>
-                      <span>{skill}</span>
-                    </motion.div>
-                  )
-                })}
-              </div>
-            </motion.div>
-          ))}
+        <div className={styles.skillGrid}>
+          {allSkills.map((skill, index) => {
+            const Icon = skillIcons[skill] || SiJavascript
+            return (
+              <motion.div
+                key={skill}
+                className={styles.skillItem}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: index * 0.03 }}
+                whileHover={{ y: -5 }}
+              >
+                <span className={styles.skillIcon}><Icon /></span>
+                <span>{skill}</span>
+              </motion.div>
+            )
+          })}
         </div>
       </div>
     </section>
