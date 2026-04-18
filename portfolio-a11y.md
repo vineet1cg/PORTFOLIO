@@ -1,0 +1,117 @@
+- generic [ref=e3]:
+  - navigation [ref=e4]:
+    - generic [ref=e5]:
+      - link "Portfolio" [ref=e6] [cursor=pointer]:
+        - /url: /
+      - list [ref=e7]:
+        - listitem [ref=e8]
+        - listitem [ref=e10]
+        - listitem [ref=e12]
+        - listitem [ref=e14]
+        - listitem [ref=e16]
+        - listitem [ref=e18]
+        - listitem [ref=e20]
+        - listitem [ref=e22]
+        - listitem [ref=e24]
+  - main [ref=e26]:
+    - generic [ref=e27]:
+      - generic [ref=e28]:
+        - generic [ref=e29]
+        - generic [ref=e38]: Your Photo
+      - generic [ref=e41]: Scroll
+    - generic [ref=e44]:
+      - generic [ref=e45]:
+        - heading "Skills" [level=2] [ref=e46]
+        - paragraph [ref=e47]: Technologies I work with
+      - generic [ref=e48]:
+        - generic [ref=e49]
+        - generic [ref=e100]
+        - generic [ref=e127]
+    - generic [ref=e171]:
+      - generic [ref=e172]:
+        - heading "Projects" [level=2] [ref=e173]
+        - paragraph [ref=e174]: Showcasing my work across different categories
+      - generic [ref=e175]:
+        - button "All" [ref=e176] [cursor=pointer]
+        - button "Games" [ref=e177] [cursor=pointer]
+        - button "Clones" [ref=e181] [cursor=pointer]
+        - button "Full Stack" [ref=e185] [cursor=pointer]
+        - button "Frontend" [ref=e189] [cursor=pointer]
+      - generic [ref=e193]:
+        - generic [ref=e194]
+        - generic [ref=e212]
+        - generic [ref=e230]
+        - generic [ref=e248]
+        - generic [ref=e262]
+        - generic [ref=e280]
+    - generic [ref=e299]:
+      - generic [ref=e300]:
+        - heading "Figma Designs" [level=2] [ref=e301]
+        - paragraph [ref=e302]: UI/UX designs created using Figma
+      - generic [ref=e303]:
+        - generic [ref=e304] [cursor=pointer]
+        - generic [ref=e319] [cursor=pointer]
+        - generic [ref=e334] [cursor=pointer]
+        - generic [ref=e349] [cursor=pointer]
+    - generic [ref=e365]:
+      - generic [ref=e366]:
+        - heading "Certificates" [level=2] [ref=e367]
+        - paragraph [ref=e368]: Professional certifications and achievements
+      - generic [ref=e369]:
+        - generic [ref=e370]
+        - generic [ref=e383]
+        - generic [ref=e396]
+        - generic [ref=e409]
+    - generic [ref=e423]:
+      - generic [ref=e424]:
+        - heading "Hackathons" [level=2] [ref=e425]
+        - paragraph [ref=e426]: Problem statements and solutions
+      - generic [ref=e427]:
+        - generic [ref=e428]
+        - generic [ref=e450]
+        - generic [ref=e472]
+    - generic [ref=e492]:
+      - generic [ref=e493]:
+        - heading "Achievements" [level=2] [ref=e494]
+        - paragraph [ref=e495]: Awards, recognitions, and milestones
+      - generic [ref=e496]:
+        - generic [ref=e497]
+        - generic [ref=e503]
+        - generic [ref=e509]
+        - generic [ref=e515]
+    - generic [ref=e522]:
+      - generic [ref=e523]:
+        - heading "Resume" [level=2] [ref=e524]
+        - paragraph [ref=e525]: View my professional background
+      - generic [ref=e526]:
+        - generic [ref=e527]
+        - generic [ref=e534]
+    - generic [ref=e542]:
+      - generic [ref=e543]:
+        - heading "Contact" [level=2] [ref=e544]
+        - paragraph [ref=e545]: Get in touch for collaborations
+      - generic [ref=e547]:
+        - textbox "Your Name" [ref=e549]
+        - textbox "Your Email" [ref=e551]
+        - textbox "Your Message" [ref=e553]
+        - button "Send Message" [ref=e554] [cursor=pointer]
+        - paragraph [ref=e557]: Powered by EmailJS - Configure your service ID, template ID, and public key
+    - generic [ref=e559]:
+      - generic [ref=e560]:
+        - heading "Connect" [level=2] [ref=e561]
+        - paragraph [ref=e562]: Find me on these platforms
+      - generic [ref=e563]:
+        - link "LeetCode" [ref=e564] [cursor=pointer]:
+          - /url: https://leetcode.com/username
+        - link "GitHub" [ref=e568] [cursor=pointer]:
+          - /url: https://github.com/username
+        - link "LinkedIn" [ref=e572] [cursor=pointer]:
+          - /url: https://linkedin.com/in/username
+        - link "Twitter" [ref=e576] [cursor=pointer]:
+          - /url: https://twitter.com/username
+        - link "YouTube" [ref=e580] [cursor=pointer]:
+          - /url: https://youtube.com/@username
+  - contentinfo [ref=e584]:
+    - generic [ref=e585]:
+      - paragraph [ref=e586]: © 2026 Your Name. All rights reserved.
+      - paragraph [ref=e587]: Built with React + Vite
